@@ -1,0 +1,13 @@
+{
+  "weather.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "weather": [
+        "GetWeather.en-us"
+      ],
+      "help": [
+        "InfoDialog.en-us"
+      ]
+    }
+  }
+}

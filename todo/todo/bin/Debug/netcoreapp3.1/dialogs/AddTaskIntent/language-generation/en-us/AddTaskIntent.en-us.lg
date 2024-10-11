@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_UVjlov()
+[Activity
+    Text = ${SendActivity_UVjlov_text()}
+]
+
+# SendActivity_UVjlov_text()
+- add the data

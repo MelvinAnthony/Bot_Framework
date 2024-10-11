@@ -1,0 +1,89 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "GpVo2S",
+    "name": "NumberInput",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "B2CRBU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "lMuS2E"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_lMuS2E()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "validations": [
+            "length(string(this.value)) == 10"
+          ],
+          "defaultValue": 1234567890,
+          "property": "dialog.mobile"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Esk5gC"
+          },
+          "activityProcessed": true,
+          "dialog": "Confirmation",
+          "resultProperty": "dialog.conform",
+          "options": {
+            "display": "Are you ok with Mobile Number: ${dialog.mobile}"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "FejADl"
+          },
+          "condition": "=dialog.conform == True",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "sT8ope"
+              },
+              "activity": "${SendActivity_sT8ope()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "zehRw7"
+              },
+              "activity": "${SendActivity_zehRw7()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "GCKyFd"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "NumberInput.lg",
+  "recognizer": "NumberInput.lu.qna",
+  "id": "NumberInput"
+}

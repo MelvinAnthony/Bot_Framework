@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "fG8BJZ",
+    "name": "AddTaskIntent",
+    "comment": "add the user information"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3WuKYQ"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UVjlov"
+          },
+          "activity": "${SendActivity_UVjlov()}"
+        }
+      ]
+    }
+  ],
+  "generator": "AddTaskIntent.lg",
+  "recognizer": "AddTaskIntent.lu.qna",
+  "id": "AddTaskIntent"
+}

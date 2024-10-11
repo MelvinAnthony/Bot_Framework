@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_ysaxiY_text()
+- ${dialog.display}
+# ConfirmInput_Prompt_ysaxiY()
+[Activity
+    Text = ${ConfirmInput_Prompt_ysaxiY_text()}
+]

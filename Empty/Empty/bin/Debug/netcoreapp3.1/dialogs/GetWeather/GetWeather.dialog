@@ -1,0 +1,56 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "S8DOOK",
+    "name": "GetWeather",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "jfhQmF"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "LfkOud"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_LfkOud()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.city"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "n4ehuf"
+          },
+          "method": "GET",
+          "headers": {},
+          "url": "http://api.weatherapi.com/v1/current.json?q=${dialog.city}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3CUsqi"
+          },
+          "activity": "${SendActivity_3CUsqi()}"
+        }
+      ]
+    }
+  ],
+  "generator": "GetWeather.lg",
+  "recognizer": "GetWeather.lu.qna",
+  "id": "GetWeather"
+}

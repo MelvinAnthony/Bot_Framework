@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_AddTaskIntent",
+  "recognizers": {
+    "en-us": "AddTaskIntent.en-us.lu",
+    "": "AddTaskIntent.en-us.lu"
+  }
+}

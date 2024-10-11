@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_weather",
+  "recognizers": {
+    "en-us": "weather.en-us.lu",
+    "": "weather.en-us.lu"
+  }
+}

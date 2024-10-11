@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# TextInput_Prompt_sQHSiQ()
+[Activity
+    Text = ${TextInput_Prompt_sQHSiQ_text()}
+]
+
+# TextInput_Prompt_sQHSiQ_text()
+- Please Enter the City: 
+# SendActivity_Ia9Ixr()
+[Activity
+    Text = ${SendActivity_Ia9Ixr_text()}
+]
+
+# SendActivity_Ia9Ixr_text()
+- ${turn.results}

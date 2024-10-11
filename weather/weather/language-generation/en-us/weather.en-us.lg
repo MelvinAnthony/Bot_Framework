@@ -1,0 +1,38 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome to your bot.
+
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_ypyCpf()
+[Activity
+    Text = ${SendActivity_ypyCpf_text()}
+]
+
+# SendActivity_ypyCpf_text()
+- ${#Weather.Score}
+# ConfirmInput_Prompt_8sH4sA()
+[Activity
+    Text = ${ConfirmInput_Prompt_8sH4sA_text()}
+]
+
+# ConfirmInput_Prompt_8sH4sA_text()
+- you want to contimue the chart
+# SendActivity_BXx2CC()
+[Activity
+    Text = ${SendActivity_BXx2CC_text()}
+]
+
+# SendActivity_BXx2CC_text()
+- chart will close

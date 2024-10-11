@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# TextInput_Prompt_BCPVVR_text()
+- Can you say your name: 
+# TextInput_Prompt_BCPVVR()
+[Activity
+    Text = ${TextInput_Prompt_BCPVVR_text()}
+]
+
+# SendActivity_6JZMJj()
+[Activity
+    Text = ${SendActivity_6JZMJj_text()}
+]
+
+# SendActivity_6JZMJj_text()
+- ${dialog.name}

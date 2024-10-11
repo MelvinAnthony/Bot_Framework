@@ -1,0 +1,72 @@
+[import](common.lg)
+
+# TextInput_Prompt_LfkOud()
+[Activity
+    Text = ${TextInput_Prompt_LfkOud_text()}
+]
+
+# TextInput_Prompt_LfkOud_text()
+- what is the city name? 
+# SendActivity_3CUsqi()
+[Activity
+    Attachments = ${json(SendActivity_3CUsqi_attachment_MAi5S8())}
+]
+
+# SendActivity_3CUsqi_attachment_MAi5S8()
+> To learn more Adaptive Cards format, read the documentation at
+> https://docs.microsoft.com/en-us/adaptive-cards/getting-started/bots
+- ```{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "version": "1.0",
+  "type": "AdaptiveCard",
+  "body": [
+    {
+      "type": "TextBlock",
+      "text": "${turn.results.content.location.name},${turn.results.content.location.region},${turn.results.content.location.country}",
+      "weight": "Large",
+      "isSubtle": true,
+      "wrap": true
+    },
+    {
+      "type": "TextBlock",
+      "text": "${turn.results.content.current.last_updated}",
+      "spacing": "None",
+      "wrap": true
+    },
+    {
+      "type": "ColumnSet",
+      "columns": [
+        "type": "Column",
+        "width": "auto",
+        "items": [
+          {
+            "type": "Image",
+            "url": "${turn.results.content.current.condition.icon}",
+            "size": "Small"
+          },
+          {
+            "type": "TextBlock",
+            "text": "${turn.results.content.current.condition.text}",
+            "size": "ExtraLarge",
+            "spacing": "None",
+            "wrap": true
+          }
+        ]
+      },
+      {
+        "type": "Column",
+        "width": "auto",
+        "items": [
+          {
+            "type": "TextBlock",
+            "text": "${turn.results.content.current.temp_c}",
+            "size": "ExtraLarge",
+            "spacing": "None",
+            "wrap": true
+          }
+        ]
+      }
+      ]
+    }
+  ]
+}```

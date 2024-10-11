@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_Hi03KV()
+[Activity
+    Text = ${SendActivity_Hi03KV_text()}
+]
+
+# SendActivity_Hi03KV_text()
+- ente the city name like chennai, Bengaluru 

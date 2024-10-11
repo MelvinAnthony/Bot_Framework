@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_grnIg8_text()
+- Select your Input Type
+# ChoiceInput_Prompt_grnIg8()
+[Activity
+    Text = ${ChoiceInput_Prompt_grnIg8_text()}
+]
+
+# SendActivity_xDFhrA_text()
+- ${user.choice}
+# SendActivity_xDFhrA()
+[Activity
+    Text = ${SendActivity_xDFhrA_text()}
+]
+
+# SendActivity_SKYf5l_text()
+- We grow to add the new input types
+# SendActivity_SKYf5l()
+[Activity
+    Text = ${SendActivity_SKYf5l_text()}
+]

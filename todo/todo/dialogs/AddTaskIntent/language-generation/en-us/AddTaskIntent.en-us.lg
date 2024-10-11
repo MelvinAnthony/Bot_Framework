@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# TextInput_Prompt_VLJbct()
+[Activity
+    Text = ${TextInput_Prompt_VLJbct_text()}
+]
+
+# TextInput_Prompt_VLJbct_text()
+- Enter the title: 

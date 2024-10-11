@@ -1,0 +1,176 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "Empty",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "EsVw8L"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Switchdialog",
+                  "disabled": true
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "6wlSni"
+          },
+          "method": "GET",
+          "resultProperty": "turn.results",
+          "url": "https://dog.ceo/api/breeds/image/random",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "PiUCQM"
+          },
+          "activity": "${SendActivity_PiUCQM()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "riEigi",
+        "name": "TextInput"
+      },
+      "intent": "TextInput",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "m3muQt"
+          },
+          "activityProcessed": true,
+          "dialog": "TextInput"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "30aQRI"
+          },
+          "activity": "${SendActivity_30aQRI()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "OXgfNt",
+        "name": "Number"
+      },
+      "intent": "Number",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "VyYuPs"
+          },
+          "activityProcessed": true,
+          "dialog": "NumberInput"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "G5N1iN",
+        "name": "weather"
+      },
+      "intent": "weather",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "PQRsTl"
+          },
+          "activityProcessed": true,
+          "dialog": "GetWeather"
+        }
+      ]
+    }
+  ],
+  "generator": "Empty.lg",
+  "id": "Empty",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "TextInput",
+        "pattern": "text"
+      },
+      {
+        "intent": "Number",
+        "pattern": "number"
+      },
+      {
+        "intent": "weather",
+        "pattern": "weather"
+      }
+    ]
+  }
+}

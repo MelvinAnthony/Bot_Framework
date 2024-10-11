@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# NumberInput_Prompt_lMuS2E_text()
+- Enter the mobile number: 
+# NumberInput_Prompt_lMuS2E()
+[Activity
+    Text = ${NumberInput_Prompt_lMuS2E_text()}
+]
+
+# SendActivity_sT8ope_text()
+- Mobile Numner is: ${dialog.mobile}
+# SendActivity_sT8ope()
+[Activity
+    Text = ${SendActivity_sT8ope_text()}
+]
+
+# SendActivity_zehRw7_text()
+- Okay
+# SendActivity_zehRw7()
+[Activity
+    Text = ${SendActivity_zehRw7_text()}
+]

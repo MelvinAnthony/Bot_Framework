@@ -1,0 +1,32 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- ```Hello! I can help you manage your tasks. What would you like to do?
+1. text
+2. number```
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_30aQRI()
+[Activity
+    Text = ${SendActivity_30aQRI_text()}
+]
+
+# SendActivity_30aQRI_text()
+- ${user.name}
+# SendActivity_PiUCQM()
+[Activity
+    Text = ${SendActivity_PiUCQM_text()}
+]
+
+# SendActivity_PiUCQM_text()
+- ${turn.results}
